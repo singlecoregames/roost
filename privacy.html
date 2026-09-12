@@ -1,30 +1,28 @@
 <!doctype html>
-<html lang="en" data-lang="en">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Roost 개인정보 정책 · Privacy Policy</title>
+<title>Roost Privacy Policy</title>
+<meta name="description" content="Roost collects no user data. What the app stores on your device and what it sends over the network.">
 <link rel="icon" href="assets/icon.png">
 <link rel="stylesheet" href="assets/site.css">
-<script>
-(function () {
-  function apply() {
-    var l = location.hash === "#ko" ? "ko" : "en";
-    document.documentElement.setAttribute("data-lang", l);
-    document.documentElement.lang = l;
-  }
-  apply(); window.addEventListener("hashchange", apply);
-})();
-</script>
 </head>
 <body>
-<div class="wrap">
 <header class="top">
-  <a class="brand" href="./"><img src="assets/icon.png" alt=""> Roost</a>
-  <nav><a href="support.html">Support</a><a href="privacy.html">Privacy policy</a><a href="https://github.com/singlecoregames/roost" target="_blank" rel="noopener">GitHub</a><a class="lang ko-only" href="#en">English</a><a class="lang en-only" href="#ko">한국어</a></nav>
+  <div class="shell nav">
+    <a class="brand" href="./"><img src="assets/icon.png" alt=""> Roost</a>
+    <nav class="nav-links">
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy policy</a>
+        <a href="https://github.com/singlecoregames/roost" target=_blank rel=noopener>GitHub</a>
+        
+    </nav>
+  </div>
 </header>
 
-<article class="doc en-only" id="en" lang="en">
+<main class="wrap">
+<article class="doc">
 <h1>Privacy Policy</h1>
 <p class="meta">Effective 2026-09-08 · Applies to the Roost iOS app (App Store and TestFlight builds)</p>
 
@@ -62,52 +60,18 @@
 <h2>7. Contact</h2>
 <p>GitHub: <a href="https://github.com/singlecoregames/roost/issues">singlecoregames/roost Issues</a></p>
 </article>
-
-
-<article class="doc ko-only" id="ko" lang="ko">
-<h1>개인정보 정책</h1>
-<p class="meta">시행 2026-09-08 · 적용 대상: Roost iOS 앱(App Store·TestFlight 배포본)</p>
-
-<h2>요약</h2>
-<p><strong>Roost는 사용자 데이터를 수집하지 않습니다.</strong> 분석·추적 도구가 없고, 개발자가 운영하는 서버도 없습니다. 앱이 네트워크에 접속하는 것은 사용자가 직접 지정한 Git 원격 저장소와 로그인한 호스팅 서비스뿐입니다.</p>
-
-<h2>1. 앱이 기기에 저장하는 것</h2>
-<ul>
-  <li><strong>저장소</strong> — 클론하거나 가져온 Git 저장소의 파일과 히스토리. 앱 전용 컨테이너에 저장되고, 사용자가 켠 경우 iOS 파일 앱에 폴더로 노출됩니다.</li>
-  <li><strong>인증 정보</strong> — 액세스 토큰·SSH 개인키·자동화 키는 iOS Keychain에 "이 기기에서만"(백업 이식 불가) 속성으로 저장됩니다. SSH 개인키는 앱 밖으로 내보내지지 않습니다.</li>
-  <li><strong>설정과 로그</strong> — 커밋 작성자 이름·이메일, 테마·언어 설정, 그리고 문제 진단용 로그(최근 며칠, 기기 안에서만 회전 보관).</li>
-</ul>
-<p>이 데이터는 앱을 삭제하면 함께 삭제됩니다. iCloud 백업에 포함되는지는 iOS의 앱 백업 설정을 따릅니다(인증 정보는 제외).</p>
-
-<h2>2. 앱이 네트워크로 보내는 것</h2>
-<ul>
-  <li><strong>Git 원격 저장소</strong> — 사용자가 클론·푸시·풀·페치할 때 해당 원격(GitHub, GitLab, Bitbucket, Gitea, 자체 호스팅 등)과 직접 통신합니다. 인증 정보는 해당 서버에만 전달됩니다.</li>
-  <li><strong>호스팅 서비스 로그인·저장소 목록</strong> — GitHub·GitLab.com 로그인(OAuth Device Flow)과 저장소 목록 조회는 그 서비스의 공식 API를 사용합니다. 각 서비스의 개인정보 정책이 적용됩니다.</li>
-  <li><strong>백그라운드 페치</strong> — iOS가 허용하는 시간에 등록된 원격을 페치해 위젯을 갱신합니다. 원격 외 다른 곳에는 접속하지 않습니다.</li>
-</ul>
-<p>그 외의 서버 통신은 없습니다. 광고·분석·크래시 수집 SDK가 없습니다.</p>
-
-<h2>3. 문제 보고(베타)</h2>
-<p>설정 → 서포트 → 문제 보고에서 사용자가 직접 만드는 진단 번들에는 다음만 들어갑니다: 기기 모델·iOS 버전·앱 버전, 앱·파일 앱 확장 로그, 파일 앱 동기화 상태, MetricKit 진단(있을 때). <strong>저장소 이름·경로·파일 내용·인증 정보는 포함되지 않습니다.</strong> 번들은 사용자가 공유 시트로 보낼 때만 기기를 떠나며, 받은 번들은 해당 문제 해결에만 쓰고 이후 삭제합니다.</p>
-
-<h2>4. TestFlight·App Store</h2>
-<p>TestFlight 베타에서는 Apple이 크래시 로그와 테스터 피드백을 개발자에게 전달할 수 있습니다. 이는 Apple의 <a href="https://www.apple.com/legal/privacy/">개인정보 정책</a>과 TestFlight 약관을 따르며, 사용자가 iOS 설정에서 끌 수 있습니다.</p>
-
-<h2>5. 아동</h2>
-<p>Roost는 데이터를 수집하지 않으므로 연령별로 다른 처리를 하지 않습니다.</p>
-
-<h2>6. 변경</h2>
-<p>정책이 바뀌면 이 페이지의 시행일을 갱신하고, 수집 항목이 생기는 변경은 앱 업데이트 노트에 명시합니다.</p>
-
-<h2>7. 문의</h2>
-<p>GitHub: <a href="https://github.com/singlecoregames/roost/issues">singlecoregames/roost Issues</a>
-<!-- TODO(FB-04): 이메일 주소를 쓰기로 하면 여기에 추가 --></p>
-</article>
+</main>
 
 <footer>
-  <span>© 2026 Singlecore Games</span>
-  <span><a href="./">홈</a> · <a href="support.html">지원</a> · <a href="en/">English</a></span>
+  <div class="shell footer-row">
+    <div>© 2026 Singlecore Games <span class="oss">· Built with libgit2, libssh2, OpenSSL, Runestone, and other open-source software. Icons by Lucide (ISC).</span></div>
+    <div class="footer-links">
+      <a href="support.html">Support</a>
+      <a href="privacy.html">Privacy policy</a>
+      <a href="https://github.com/singlecoregames/roost" target="_blank" rel="noopener">GitHub</a>
+      
+    </div>
+  </div>
 </footer>
-</div>
 </body>
 </html>

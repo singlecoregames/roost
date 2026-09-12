@@ -45,8 +45,7 @@ h2 { font-size: clamp(34px, 4.6vw, 60px); line-height: 1.02; letter-spacing: -.0
 .beta-dialog::backdrop { background: rgba(0, 0, 0, .45); backdrop-filter: blur(6px); }
 .beta-dialog h3 { margin: 0 0 8px; font-size: 20px; letter-spacing: -.02em; }
 .beta-dialog p { margin: 0 0 20px; color: var(--muted); font-size: 15px; word-break: keep-all; }
-/* 문서 페이지 언어 전환 — #en/#ko 해시로 한 언어만 보인다 (기본 en) */
-html[data-lang="en"] .ko-only, html[data-lang="ko"] .en-only { display: none !important; }
+
 
 /* 히어로 */
 .hero { padding: 104px 0 24px; text-align: center; }
@@ -115,16 +114,12 @@ footer { padding: 30px 0 50px; border-top: 1px solid var(--line); color: var(--m
 
 /* 정책·지원 문서 페이지 (privacy.html / support.html) */
 .wrap { max-width: 860px; margin: 0 auto; padding: 0 20px; }
-.wrap header.top { position: static; background: none; border: 0; backdrop-filter: none; display: flex; align-items: center; justify-content: space-between; height: 68px; }
-.wrap header.top nav a { margin-left: 20px; font-size: 14px; color: var(--muted); }
-.wrap header.top nav a:hover { color: var(--ink); }
 article.doc h1 { font-size: clamp(36px, 5vw, 56px); text-align: left; margin: 48px 0 8px; letter-spacing: -.04em; }
 article.doc h2 { font-size: 22px; margin: 32px 0 8px; letter-spacing: -.02em; }
 article.doc p, article.doc li { font-size: 16px; color: var(--ink); }
 article.doc .meta, article.doc .note { color: var(--muted); font-size: 14px; letter-spacing: 0; }
 article.doc code { font-size: 14px; background: var(--paper); border: 1px solid var(--line); border-radius: 6px; padding: 1px 6px; }
 article.doc hr { border: 0; border-top: 1px solid var(--line); margin: 40px 0; }
-.wrap footer { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
 
 @media (max-width: 820px) {
   .nav-links { gap: 14px; font-size: 13px; }

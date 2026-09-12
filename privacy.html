@@ -21,8 +21,48 @@
 <div class="wrap">
 <header class="top">
   <a class="brand" href="./"><img src="assets/icon.png" alt=""> Roost</a>
-  <nav class="ko-only"><a href="support.html#ko">지원</a><a href="privacy.html#ko">개인정보 정책</a><a href="https://github.com/singlecoregames/roost/issues">GitHub</a><a class="lang" href="#en">English</a></nav><nav class="en-only"><a href="support.html#en">Support</a><a href="privacy.html#en">Privacy policy</a><a href="https://github.com/singlecoregames/roost/issues">GitHub</a><a class="lang" href="#ko">한국어</a></nav>
+  <nav><a href="support.html">Support</a><a href="privacy.html">Privacy policy</a><a href="https://github.com/singlecoregames/roost" target="_blank" rel="noopener">GitHub</a><a class="lang ko-only" href="#en">English</a><a class="lang en-only" href="#ko">한국어</a></nav>
 </header>
+
+<article class="doc en-only" id="en" lang="en">
+<h1>Privacy Policy</h1>
+<p class="meta">Effective 2026-09-08 · Applies to the Roost iOS app (App Store and TestFlight builds)</p>
+
+<h2>Summary</h2>
+<p><strong>Roost does not collect user data.</strong> There are no analytics or tracking SDKs and no developer-operated servers. The only network connections the app makes are to the Git remotes you configure and the hosting services you sign in to.</p>
+
+<h2>1. What the app stores on your device</h2>
+<ul>
+  <li><strong>Repositories</strong> — files and history of the Git repositories you clone or import, in the app's own container; exposed as folders in the iOS Files app when you enable it.</li>
+  <li><strong>Credentials</strong> — access tokens, SSH private keys and automation keys live in the iOS Keychain with the "this device only" attribute (not migrated by backups). SSH private keys never leave the app.</li>
+  <li><strong>Settings and logs</strong> — commit author name/email, theme and language, and diagnostic logs (last few days, rotated on device).</li>
+</ul>
+<p>Deleting the app deletes this data. Inclusion in iCloud backups follows your iOS app-backup settings (credentials are excluded).</p>
+
+<h2>2. What the app sends over the network</h2>
+<ul>
+  <li><strong>Git remotes</strong> — clone, push, pull and fetch talk directly to the remote you chose (GitHub, GitLab, Bitbucket, Gitea, self-hosted, …). Credentials go only to that server.</li>
+  <li><strong>Hosting service sign-in and repository lists</strong> — GitHub and GitLab.com sign-in (OAuth device flow) and repository listing use those services' official APIs, under their own privacy policies.</li>
+  <li><strong>Background fetch</strong> — when iOS allows, the app fetches registered remotes to refresh widgets. Nothing else is contacted.</li>
+</ul>
+<p>There is no other server communication. No advertising, analytics or crash-collection SDKs.</p>
+
+<h2>3. Problem reports (beta)</h2>
+<p>A diagnostic bundle you create yourself in Settings → Support → Problem report contains only: device model, iOS version, app version, app and Files-extension logs, Files sync status, and MetricKit diagnostics when present. <strong>Repository names, paths, file contents and credentials are never included.</strong> The bundle leaves your device only when you send it via the share sheet; received bundles are used solely to resolve that issue and then deleted.</p>
+
+<h2>4. TestFlight and the App Store</h2>
+<p>During the TestFlight beta, Apple may forward crash logs and tester feedback to the developer under Apple's <a href="https://www.apple.com/legal/privacy/">privacy policy</a> and the TestFlight terms. You can turn this off in iOS Settings.</p>
+
+<h2>5. Children</h2>
+<p>Roost collects no data and therefore applies no age-specific processing.</p>
+
+<h2>6. Changes</h2>
+<p>When this policy changes we update the effective date on this page; any change that introduces data collection is called out in the app's release notes.</p>
+
+<h2>7. Contact</h2>
+<p>GitHub: <a href="https://github.com/singlecoregames/roost/issues">singlecoregames/roost Issues</a></p>
+</article>
+
 
 <article class="doc ko-only" id="ko" lang="ko">
 <h1>개인정보 정책</h1>
@@ -62,46 +102,6 @@
 <h2>7. 문의</h2>
 <p>GitHub: <a href="https://github.com/singlecoregames/roost/issues">singlecoregames/roost Issues</a>
 <!-- TODO(FB-04): 이메일 주소를 쓰기로 하면 여기에 추가 --></p>
-</article>
-
-
-<article class="doc en-only" id="en" lang="en">
-<h1>Privacy Policy</h1>
-<p class="meta">Effective 2026-09-08 · Applies to the Roost iOS app (App Store and TestFlight builds)</p>
-
-<h2>Summary</h2>
-<p><strong>Roost does not collect user data.</strong> There are no analytics or tracking SDKs and no developer-operated servers. The only network connections the app makes are to the Git remotes you configure and the hosting services you sign in to.</p>
-
-<h2>1. What the app stores on your device</h2>
-<ul>
-  <li><strong>Repositories</strong> — files and history of the Git repositories you clone or import, in the app's own container; exposed as folders in the iOS Files app when you enable it.</li>
-  <li><strong>Credentials</strong> — access tokens, SSH private keys and automation keys live in the iOS Keychain with the "this device only" attribute (not migrated by backups). SSH private keys never leave the app.</li>
-  <li><strong>Settings and logs</strong> — commit author name/email, theme and language, and diagnostic logs (last few days, rotated on device).</li>
-</ul>
-<p>Deleting the app deletes this data. Inclusion in iCloud backups follows your iOS app-backup settings (credentials are excluded).</p>
-
-<h2>2. What the app sends over the network</h2>
-<ul>
-  <li><strong>Git remotes</strong> — clone, push, pull and fetch talk directly to the remote you chose (GitHub, GitLab, Bitbucket, Gitea, self-hosted, …). Credentials go only to that server.</li>
-  <li><strong>Hosting service sign-in and repository lists</strong> — GitHub and GitLab.com sign-in (OAuth device flow) and repository listing use those services' official APIs, under their own privacy policies.</li>
-  <li><strong>Background fetch</strong> — when iOS allows, the app fetches registered remotes to refresh widgets. Nothing else is contacted.</li>
-</ul>
-<p>There is no other server communication. No advertising, analytics or crash-collection SDKs.</p>
-
-<h2>3. Problem reports (beta)</h2>
-<p>A diagnostic bundle you create yourself in Settings → Support → Problem report contains only: device model, iOS version, app version, app and Files-extension logs, Files sync status, and MetricKit diagnostics when present. <strong>Repository names, paths, file contents and credentials are never included.</strong> The bundle leaves your device only when you send it via the share sheet; received bundles are used solely to resolve that issue and then deleted.</p>
-
-<h2>4. TestFlight and the App Store</h2>
-<p>During the TestFlight beta, Apple may forward crash logs and tester feedback to the developer under Apple's <a href="https://www.apple.com/legal/privacy/">privacy policy</a> and the TestFlight terms. You can turn this off in iOS Settings.</p>
-
-<h2>5. Children</h2>
-<p>Roost collects no data and therefore applies no age-specific processing.</p>
-
-<h2>6. Changes</h2>
-<p>When this policy changes we update the effective date on this page; any change that introduces data collection is called out in the app's release notes.</p>
-
-<h2>7. Contact</h2>
-<p>GitHub: <a href="https://github.com/singlecoregames/roost/issues">singlecoregames/roost Issues</a></p>
 </article>
 
 <footer>

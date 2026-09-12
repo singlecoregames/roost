@@ -21,8 +21,43 @@
 <div class="wrap">
 <header class="top">
   <a class="brand" href="./"><img src="assets/icon.png" alt=""> Roost</a>
-  <nav class="ko-only"><a href="support.html#ko">지원</a><a href="privacy.html#ko">개인정보 정책</a><a href="https://github.com/singlecoregames/roost/issues">GitHub</a><a class="lang" href="#en">English</a></nav><nav class="en-only"><a href="support.html#en">Support</a><a href="privacy.html#en">Privacy policy</a><a href="https://github.com/singlecoregames/roost/issues">GitHub</a><a class="lang" href="#ko">한국어</a></nav>
+  <nav><a href="support.html">Support</a><a href="privacy.html">Privacy policy</a><a href="https://github.com/singlecoregames/roost" target="_blank" rel="noopener">GitHub</a><a class="lang ko-only" href="#en">English</a><a class="lang en-only" href="#ko">한국어</a></nav>
 </header>
+
+<article class="doc en-only" id="en" lang="en">
+<h1>Support</h1>
+<p class="meta">During the beta, feedback and problem reports go through GitHub Issues.</p>
+
+<h2>Sending a problem report bundle</h2>
+<p>The most useful report is one made right when something looks wrong — sync paused, a save that never lands.</p>
+<ol>
+  <li>In Roost: <strong>Settings → Support → Problem report</strong></li>
+  <li><strong>Create bundle</strong>, then <strong>Share</strong> — mail, message, or save to Files</li>
+  <li>Open a <a href="https://github.com/singlecoregames/roost/issues/new">GitHub Issue</a> with a line or two on <em>what you were doing</em> and <em>what differed from what you expected</em>, and attach the zip.</li>
+</ol>
+<p class="note">A bundle contains device model, iOS and app version, app and Files-extension logs, and sync status only. Repository names, paths, contents and credentials are never included, and the bundle leaves your device only when you share it. (<a href="privacy.html#en">Privacy policy</a>)</p>
+
+<h2>Known issues (beta)</h2>
+<ul>
+  <li><strong>Files app sync may show "paused" or lag</strong> — run Recover under Settings → Advanced → Files app sync, then Reset if needed, and send a problem report from that moment.</li>
+  <li><code>.Trash</code> may linger in the Files sync list (under investigation).</li>
+  <li>Leaving the app during a large branch switch can defer Files-app saves until you reopen the app.</li>
+  <li>Landscape is enabled only in viewers, diffs, commit detail and the merge editor.</li>
+  <li>The code index (find definitions/usages) is not in this build.</li>
+</ul>
+
+<h2>Frequently asked</h2>
+<ul>
+  <li><strong>Bitbucket repository list says "rejected"</strong> — use your <em>Atlassian account email</em> as the username and an API token (<code>ATATT…</code>) with <code>read:workspace</code> and <code>read:repository</code> scopes. The git push username is filled in automatically.</li>
+  <li><strong>"SSH host key changed" warning</strong> — don't continue unless you know the server really rotated its key; only then choose "Replace the stored key and continue".</li>
+  <li><strong>Edits from another app don't show in Changes</strong> — make sure you edited inside the Roost location in Files, then pull to refresh the Changes tab.</li>
+  <li><strong>Data safety</strong> — this is a beta. Don't keep the only copy of a repository here; push important changes to a remote.</li>
+</ul>
+
+<h2>Feature requests and questions</h2>
+<p>Please open a <a href="https://github.com/singlecoregames/roost/issues">GitHub Issue</a>. The source repository is private; this repository hosts the site and the issue tracker.</p>
+</article>
+
 
 <article class="doc ko-only" id="ko" lang="ko">
 <h1>지원</h1>
@@ -57,41 +92,6 @@
 
 <h2>기능 제안·질문</h2>
 <p><a href="https://github.com/singlecoregames/roost/issues">GitHub Issues</a>에 올려 주세요. 소스 저장소는 비공개이며, 이 리포는 사이트·이슈 트래커 용도입니다.</p>
-</article>
-
-
-<article class="doc en-only" id="en" lang="en">
-<h1>Support</h1>
-<p class="meta">During the beta, feedback and problem reports go through GitHub Issues.</p>
-
-<h2>Sending a problem report bundle</h2>
-<p>The most useful report is one made right when something looks wrong — sync paused, a save that never lands.</p>
-<ol>
-  <li>In Roost: <strong>Settings → Support → Problem report</strong></li>
-  <li><strong>Create bundle</strong>, then <strong>Share</strong> — mail, message, or save to Files</li>
-  <li>Open a <a href="https://github.com/singlecoregames/roost/issues/new">GitHub Issue</a> with a line or two on <em>what you were doing</em> and <em>what differed from what you expected</em>, and attach the zip.</li>
-</ol>
-<p class="note">A bundle contains device model, iOS and app version, app and Files-extension logs, and sync status only. Repository names, paths, contents and credentials are never included, and the bundle leaves your device only when you share it. (<a href="privacy.html#en">Privacy policy</a>)</p>
-
-<h2>Known issues (beta)</h2>
-<ul>
-  <li><strong>Files app sync may show "paused" or lag</strong> — run Recover under Settings → Advanced → Files app sync, then Reset if needed, and send a problem report from that moment.</li>
-  <li><code>.Trash</code> may linger in the Files sync list (under investigation).</li>
-  <li>Leaving the app during a large branch switch can defer Files-app saves until you reopen the app.</li>
-  <li>Landscape is enabled only in viewers, diffs, commit detail and the merge editor.</li>
-  <li>The code index (find definitions/usages) is not in this build.</li>
-</ul>
-
-<h2>Frequently asked</h2>
-<ul>
-  <li><strong>Bitbucket repository list says "rejected"</strong> — use your <em>Atlassian account email</em> as the username and an API token (<code>ATATT…</code>) with <code>read:workspace</code> and <code>read:repository</code> scopes. The git push username is filled in automatically.</li>
-  <li><strong>"SSH host key changed" warning</strong> — don't continue unless you know the server really rotated its key; only then choose "Replace the stored key and continue".</li>
-  <li><strong>Edits from another app don't show in Changes</strong> — make sure you edited inside the Roost location in Files, then pull to refresh the Changes tab.</li>
-  <li><strong>Data safety</strong> — this is a beta. Don't keep the only copy of a repository here; push important changes to a remote.</li>
-</ul>
-
-<h2>Feature requests and questions</h2>
-<p>Please open a <a href="https://github.com/singlecoregames/roost/issues">GitHub Issue</a>. The source repository is private; this repository hosts the site and the issue tracker.</p>
 </article>
 
 <footer>

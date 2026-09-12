@@ -107,9 +107,7 @@ h3.group:first-of-type { margin-top: 28px; }
 
 /* 푸터 */
 footer { padding: 30px 0 50px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
-.footer-row { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
-.footer-links { display: flex; gap: 20px; }
-.footer-links a:hover { color: var(--ink); }
+.footer-center { text-align: center; word-break: keep-all; }
 .oss { font-size: 12px; }
 
 /* 정책·지원 문서 페이지 (privacy.html / support.html) */

@@ -36,8 +36,9 @@
   <div class="shell nav">
     <a class="brand" href="./"><img src="../assets/icon.png" alt=""> Roost</a>
     <nav class="nav-links">
-        <a href="#screens">About</a>
-        <a href="#features">Features</a>
+        <a href="../support.html#ko">지원</a>
+        <a href="../privacy.html#ko">개인정보 정책</a>
+        <a href="https://github.com/singlecoregames/roost/issues">GitHub</a>
         <a href="../">English</a>
     </nav>
   </div>
@@ -47,8 +48,15 @@
   <section class="hero shell">
     <h1 class="lead">iOS에서 Git의 모든 기능을, 무료로.</h1>
     <div class="cta-row">
-      <!-- TODO(REL-05): TestFlight 공개 링크로 교체 — https://testflight.apple.com/join/XXXXXXXX -->
-      <a class="btn primary" href="#beta">TestFlight 베타 참여</a>
+      <!-- TODO(REL-05): 공개 링크가 나오면 button을 <a class="btn primary" href="https://testflight.apple.com/join/XXXXXXXX">로 바꾸고 dialog를 지운다 -->
+      <button class="btn primary" type="button" data-beta-cta>TestFlight 베타 참여</button>
+      <dialog class="beta-dialog" id="beta-dialog">
+        <form method="dialog">
+          <h3>TestFlight 베타</h3>
+          <p>공개 링크를 아직 준비하고 있습니다. 조금만 기다려 주세요.</p>
+          <button class="btn primary" type="submit" autofocus>닫기</button>
+        </form>
+      </dialog>
       <a class="btn" href="#features">Features</a>
     </div>
   </section>
@@ -64,17 +72,17 @@
         </div>
       </div>
       <div class="thumbs">
-        <button class="thumb active" type="button" data-shot="01-repo-list" aria-label="저장소 목록"><img src="../screenshots/ko-light/01-repo-list.png" alt="" width="603" height="1311" loading="lazy"><span>저장소 목록</span></button>
-        <button class="thumb" type="button" data-shot="04-history-graph" aria-label="히스토리 그래프"><img src="../screenshots/ko-light/04-history-graph.png" alt="" width="603" height="1311" loading="lazy"><span>히스토리 그래프</span></button>
-        <button class="thumb" type="button" data-shot="06-merge-editor" aria-label="머지 에디터"><img src="../screenshots/ko-light/06-merge-editor.png" alt="" width="603" height="1311" loading="lazy"><span>머지 에디터</span></button>
-        <button class="thumb" type="button" data-shot="05-diff-split" aria-label="분할 diff"><img src="../screenshots/ko-light/05-diff-split.png" alt="" width="603" height="1311" loading="lazy"><span>분할 diff</span></button>
-        <button class="thumb" type="button" data-shot="03-changes-commit" aria-label="변경 사항 · 커밋"><img src="../screenshots/ko-light/03-changes-commit.png" alt="" width="603" height="1311" loading="lazy"><span>변경 사항 · 커밋</span></button>
-        <button class="thumb" type="button" data-shot="02-files" aria-label="파일 탭"><img src="../screenshots/ko-light/02-files.png" alt="" width="603" height="1311" loading="lazy"><span>파일 탭</span></button>
-        <button class="thumb" type="button" data-shot="08-viewers" aria-label="Aseprite 뷰어"><img src="../screenshots/ko-light/08-viewers.png" alt="" width="603" height="1311" loading="lazy"><span>Aseprite 뷰어</span></button>
-        <button class="thumb" type="button" data-shot="09-viewers-fbx" aria-label="FBX 뷰어"><img src="../screenshots/ko-light/09-viewers-fbx.png" alt="" width="603" height="1311" loading="lazy"><span>FBX 뷰어</span></button>
+        <button class="thumb active" type="button" data-shot="01-repo-list" aria-label="저장소 목록"><img src="../screenshots/ko-light/thumbs/01-repo-list.png" alt="" width="212" height="212" loading="lazy"><span>저장소 목록</span></button>
+        <button class="thumb" type="button" data-shot="04-history-graph" aria-label="히스토리 그래프"><img src="../screenshots/ko-light/thumbs/04-history-graph.png" alt="" width="212" height="212" loading="lazy"><span>히스토리 그래프</span></button>
+        <button class="thumb" type="button" data-shot="06-merge-editor" aria-label="머지 에디터"><img src="../screenshots/ko-light/thumbs/06-merge-editor.png" alt="" width="212" height="212" loading="lazy"><span>머지 에디터</span></button>
+        <button class="thumb" type="button" data-shot="05-diff-split" aria-label="분할 diff"><img src="../screenshots/ko-light/thumbs/05-diff-split.png" alt="" width="212" height="212" loading="lazy"><span>분할 diff</span></button>
+        <button class="thumb" type="button" data-shot="03-changes-commit" aria-label="변경 사항 · 커밋"><img src="../screenshots/ko-light/thumbs/03-changes-commit.png" alt="" width="212" height="212" loading="lazy"><span>변경 사항 · 커밋</span></button>
+        <button class="thumb" type="button" data-shot="02-files" aria-label="파일 탭"><img src="../screenshots/ko-light/thumbs/02-files.png" alt="" width="212" height="212" loading="lazy"><span>파일 탭</span></button>
+        <button class="thumb" type="button" data-shot="08-viewers" aria-label="Aseprite 뷰어"><img src="../screenshots/ko-light/thumbs/08-viewers.png" alt="" width="212" height="212" loading="lazy"><span>Aseprite 뷰어</span></button>
+        <button class="thumb" type="button" data-shot="09-viewers-fbx" aria-label="FBX 뷰어"><img src="../screenshots/ko-light/thumbs/09-viewers-fbx.png" alt="" width="212" height="212" loading="lazy"><span>FBX 뷰어</span></button>
       </div>
     </div>
-      <p class="small beta-note" id="beta">베타 빌드입니다. 유일한 사본인 저장소는 넣지 마세요. 앱은 아무것도 수집하지 않고, 문제 보고 번들에도 저장소 이름·경로·내용은 들어가지 않습니다. <a href="../privacy.html">개인정보 정책</a></p>
+      <p class="small beta-note" id="beta">베타 빌드입니다. 유일한 사본인 저장소는 넣지 마세요. 앱은 아무것도 수집하지 않고, 문제 보고 번들에도 저장소 이름·경로·내용은 들어가지 않습니다. <a href="../privacy.html#ko">개인정보 정책</a></p>
     </div>
   </section>
 
@@ -129,8 +137,8 @@
   <div class="shell footer-row">
     <div>© 2026 Singlecore Games <span class="oss">· libgit2 · libssh2 · OpenSSL · Runestone 등 오픈소스 위에 만들어졌습니다. 아이콘 Lucide (ISC).</span></div>
     <div class="footer-links">
-      <a href="../support.html">지원</a>
-      <a href="../privacy.html">개인정보 정책</a>
+      <a href="../support.html#ko">지원</a>
+      <a href="../privacy.html#ko">개인정보 정책</a>
       <a href="https://github.com/singlecoregames/roost/issues">GitHub</a>
       <a href="../">English</a>
     </div>
@@ -165,7 +173,7 @@
     document.getElementById("gallery-caption").textContent = btn.getAttribute("aria-label");
     g.querySelectorAll(".thumb").forEach(function (t) { t.classList.toggle("active", t === btn); });
     g.querySelectorAll(".thumb img").forEach(function (t) {
-      t.src = g.getAttribute("data-prefix") + "screenshots/" + g.getAttribute("data-lang") + "-" + mode + "/" + t.parentNode.getAttribute("data-shot") + ".png";
+      t.src = g.getAttribute("data-prefix") + "screenshots/" + g.getAttribute("data-lang") + "-" + mode + "/thumbs/" + t.parentNode.getAttribute("data-shot") + ".png";
     });
   }
   document.addEventListener("click", function (e) {
@@ -173,6 +181,7 @@
     if (t) { mode = t.getAttribute("data-mode"); try { localStorage.setItem("roost-shots", mode); } catch (x) {} apply(); return; }
     var th = e.target.closest(".thumb");
     if (th) select(th);
+    if (e.target.closest("[data-beta-cta]")) { var d = document.getElementById("beta-dialog"); if (d && d.showModal) d.showModal(); }
   });
   apply();
 })();

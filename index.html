@@ -36,8 +36,9 @@
   <div class="shell nav">
     <a class="brand" href="./"><img src="assets/icon.png" alt=""> Roost</a>
     <nav class="nav-links">
-        <a href="#screens">About</a>
-        <a href="#features">Features</a>
+        <a href="support.html#en">Support</a>
+        <a href="privacy.html#en">Privacy policy</a>
+        <a href="https://github.com/singlecoregames/roost/issues">GitHub</a>
         
     </nav>
   </div>
@@ -47,8 +48,15 @@
   <section class="hero shell">
     <h1 class="lead">All of Git on iOS. Free.</h1>
     <div class="cta-row">
-      <!-- TODO(REL-05): TestFlight 공개 링크로 교체 — https://testflight.apple.com/join/XXXXXXXX -->
-      <a class="btn primary" href="#beta">Join the TestFlight beta</a>
+      <!-- TODO(REL-05): 공개 링크가 나오면 button을 <a class="btn primary" href="https://testflight.apple.com/join/XXXXXXXX">로 바꾸고 dialog를 지운다 -->
+      <button class="btn primary" type="button" data-beta-cta>Join the TestFlight beta</button>
+      <dialog class="beta-dialog" id="beta-dialog">
+        <form method="dialog">
+          <h3>TestFlight beta</h3>
+          <p>The public link isn't ready yet. Please check back soon.</p>
+          <button class="btn primary" type="submit" autofocus>Close</button>
+        </form>
+      </dialog>
       <a class="btn" href="#features">Features</a>
     </div>
   </section>
@@ -64,14 +72,14 @@
         </div>
       </div>
       <div class="thumbs">
-        <button class="thumb active" type="button" data-shot="01-repo-list" aria-label="Repositories"><img src="screenshots/en-light/01-repo-list.png" alt="" width="603" height="1311" loading="lazy"><span>Repositories</span></button>
-        <button class="thumb" type="button" data-shot="04-history-graph" aria-label="History graph"><img src="screenshots/en-light/04-history-graph.png" alt="" width="603" height="1311" loading="lazy"><span>History graph</span></button>
-        <button class="thumb" type="button" data-shot="06-merge-editor" aria-label="Merge editor"><img src="screenshots/en-light/06-merge-editor.png" alt="" width="603" height="1311" loading="lazy"><span>Merge editor</span></button>
-        <button class="thumb" type="button" data-shot="05-diff-split" aria-label="Split diff"><img src="screenshots/en-light/05-diff-split.png" alt="" width="603" height="1311" loading="lazy"><span>Split diff</span></button>
-        <button class="thumb" type="button" data-shot="03-changes-commit" aria-label="Changes · Commit"><img src="screenshots/en-light/03-changes-commit.png" alt="" width="603" height="1311" loading="lazy"><span>Changes · Commit</span></button>
-        <button class="thumb" type="button" data-shot="02-files" aria-label="Files"><img src="screenshots/en-light/02-files.png" alt="" width="603" height="1311" loading="lazy"><span>Files</span></button>
-        <button class="thumb" type="button" data-shot="08-viewers" aria-label="Aseprite viewer"><img src="screenshots/en-light/08-viewers.png" alt="" width="603" height="1311" loading="lazy"><span>Aseprite viewer</span></button>
-        <button class="thumb" type="button" data-shot="09-viewers-fbx" aria-label="FBX viewer"><img src="screenshots/en-light/09-viewers-fbx.png" alt="" width="603" height="1311" loading="lazy"><span>FBX viewer</span></button>
+        <button class="thumb active" type="button" data-shot="01-repo-list" aria-label="Repositories"><img src="screenshots/en-light/thumbs/01-repo-list.png" alt="" width="212" height="212" loading="lazy"><span>Repositories</span></button>
+        <button class="thumb" type="button" data-shot="04-history-graph" aria-label="History graph"><img src="screenshots/en-light/thumbs/04-history-graph.png" alt="" width="212" height="212" loading="lazy"><span>History graph</span></button>
+        <button class="thumb" type="button" data-shot="06-merge-editor" aria-label="Merge editor"><img src="screenshots/en-light/thumbs/06-merge-editor.png" alt="" width="212" height="212" loading="lazy"><span>Merge editor</span></button>
+        <button class="thumb" type="button" data-shot="05-diff-split" aria-label="Split diff"><img src="screenshots/en-light/thumbs/05-diff-split.png" alt="" width="212" height="212" loading="lazy"><span>Split diff</span></button>
+        <button class="thumb" type="button" data-shot="03-changes-commit" aria-label="Changes · Commit"><img src="screenshots/en-light/thumbs/03-changes-commit.png" alt="" width="212" height="212" loading="lazy"><span>Changes · Commit</span></button>
+        <button class="thumb" type="button" data-shot="02-files" aria-label="Files"><img src="screenshots/en-light/thumbs/02-files.png" alt="" width="212" height="212" loading="lazy"><span>Files</span></button>
+        <button class="thumb" type="button" data-shot="08-viewers" aria-label="Aseprite viewer"><img src="screenshots/en-light/thumbs/08-viewers.png" alt="" width="212" height="212" loading="lazy"><span>Aseprite viewer</span></button>
+        <button class="thumb" type="button" data-shot="09-viewers-fbx" aria-label="FBX viewer"><img src="screenshots/en-light/thumbs/09-viewers-fbx.png" alt="" width="212" height="212" loading="lazy"><span>FBX viewer</span></button>
       </div>
     </div>
       <p class="small beta-note" id="beta">Roost is in beta. Keep a backup of any repository you can't afford to lose. The app collects nothing, and problem reports never include repository names, paths, or contents. <a href="privacy.html#en">Privacy policy</a></p>
@@ -165,7 +173,7 @@
     document.getElementById("gallery-caption").textContent = btn.getAttribute("aria-label");
     g.querySelectorAll(".thumb").forEach(function (t) { t.classList.toggle("active", t === btn); });
     g.querySelectorAll(".thumb img").forEach(function (t) {
-      t.src = g.getAttribute("data-prefix") + "screenshots/" + g.getAttribute("data-lang") + "-" + mode + "/" + t.parentNode.getAttribute("data-shot") + ".png";
+      t.src = g.getAttribute("data-prefix") + "screenshots/" + g.getAttribute("data-lang") + "-" + mode + "/thumbs/" + t.parentNode.getAttribute("data-shot") + ".png";
     });
   }
   document.addEventListener("click", function (e) {
@@ -173,6 +181,7 @@
     if (t) { mode = t.getAttribute("data-mode"); try { localStorage.setItem("roost-shots", mode); } catch (x) {} apply(); return; }
     var th = e.target.closest(".thumb");
     if (th) select(th);
+    if (e.target.closest("[data-beta-cta]")) { var d = document.getElementById("beta-dialog"); if (d && d.showModal) d.showModal(); }
   });
   apply();
 })();

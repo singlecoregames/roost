@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Roost 지원 · Support</title>
+<link rel="icon" href="assets/icon.png">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <a class="brand" href="./"><img src="assets/icon.png" alt=""> Roost</a>
+  <nav><a href="support.html">지원</a><a href="privacy.html">개인정보</a><a href="https://github.com/singlecoregames/roost/issues">피드백</a><a class="lang" href="#en">English</a></nav>
+</header>
+
+<article class="doc" id="ko">
+<h1>지원</h1>
+<p class="meta">베타 기간 중 피드백과 문제 보고는 GitHub Issues로 받습니다.</p>
+
+<h2>문제 보고 번들 보내기</h2>
+<p>동기화가 멈추거나 저장이 밀리는 등 "뭔가 이상한" 순간에 바로 만들어 보내 주시면 가장 정확합니다.</p>
+<ol>
+  <li>Roost 앱 → <strong>설정 → 서포트 → 문제 보고</strong></li>
+  <li><strong>번들 만들기</strong> → 잠시 뒤 <strong>공유</strong> → 메일·메시지·파일로 보내거나 저장</li>
+  <li><a href="https://github.com/singlecoregames/roost/issues/new">GitHub Issue</a>를 열고 <em>무엇을 하다가</em> <em>무엇이 기대와 달랐는지</em> 한두 줄 + 번들 zip 첨부
+    <!-- TODO(FB-04): 이메일 채널을 쓰면 여기에 주소 --></li>
+</ol>
+<p class="note">번들에는 기기 모델·iOS·앱 버전, 앱/파일 앱 확장 로그, 동기화 상태만 들어갑니다. 저장소 이름·경로·내용·인증 정보는 들어가지 않습니다. 번들은 사용자가 직접 공유할 때만 기기를 떠납니다. (<a href="privacy.html">개인정보 정책</a>)</p>
+
+<h2>알려진 문제 (베타)</h2>
+<ul>
+  <li><strong>파일 앱 동기화가 "일시 정지"로 보이거나 반영이 늦을 수 있음</strong> — 설정 → 고급 → 파일 앱 동기화에서 복구를 실행하고, 그래도 안 되면 초기화. 그 순간의 문제 보고를 보내 주세요.</li>
+  <li>파일 앱 동기화 목록에 <code>.Trash</code>가 계속 남을 수 있음 (조사 중).</li>
+  <li>큰 브랜치 전환 중 앱을 벗어나면 파일 앱 저장이 앱을 다시 열 때까지 미뤄질 수 있음.</li>
+  <li>가로 모드는 뷰어·diff·커밋 상세·머지 에디터에서만 켜집니다.</li>
+  <li>코드 인덱스(정의·사용처 찾기)는 이 빌드에 없습니다.</li>
+</ul>
+
+<h2>자주 묻는 것</h2>
+<ul>
+  <li><strong>Bitbucket 저장소 목록이 "거부됨"으로 나와요</strong> — 계정 사용자명에 <em>Atlassian 계정 이메일</em>을, 토큰은 API 토큰(<code>ATATT…</code>)에 <code>read:workspace</code>·<code>read:repository</code> 범위를 주세요. git 푸시용 사용자명은 앱이 자동으로 채웁니다.</li>
+  <li><strong>SSH 호스트 키가 변경됐다는 경고</strong> — 서버가 실제로 키를 바꾼 게 아니면 진행하지 마세요. 확인 후 "기존 키를 교체하고 계속"으로만 넘어갑니다.</li>
+  <li><strong>다른 앱에서 편집한 파일이 변경 사항에 안 보여요</strong> — 파일 앱의 Roost 위치 안에서 편집했는지 확인하고, 변경 사항 탭을 당겨서 새로 고침하세요.</li>
+  <li><strong>데이터 안전</strong> — 베타 빌드입니다. 유일한 사본인 저장소는 넣지 말고, 중요한 변경은 푸시로 원격에 두세요.</li>
+</ul>
+
+<h2>기능 제안·질문</h2>
+<p><a href="https://github.com/singlecoregames/roost/issues">GitHub Issues</a>에 올려 주세요. 소스 저장소는 비공개이며, 이 리포는 사이트·이슈 트래커 용도입니다.</p>
+</article>
+
+<hr>
+
+<article class="doc" id="en" lang="en">
+<h1>Support</h1>
+<p class="meta">During the beta, feedback and problem reports go through GitHub Issues.</p>
+
+<h2>Sending a problem report bundle</h2>
+<p>The most useful report is one made right when something looks wrong — sync paused, a save that never lands.</p>
+<ol>
+  <li>In Roost: <strong>Settings → Support → Problem report</strong></li>
+  <li><strong>Create bundle</strong>, then <strong>Share</strong> — mail, message, or save to Files</li>
+  <li>Open a <a href="https://github.com/singlecoregames/roost/issues/new">GitHub Issue</a> with a line or two on <em>what you were doing</em> and <em>what differed from what you expected</em>, and attach the zip.</li>
+</ol>
+<p class="note">A bundle contains device model, iOS and app version, app and Files-extension logs, and sync status only. Repository names, paths, contents and credentials are never included, and the bundle leaves your device only when you share it. (<a href="privacy.html#en">Privacy policy</a>)</p>
+
+<h2>Known issues (beta)</h2>
+<ul>
+  <li><strong>Files app sync may show "paused" or lag</strong> — run Recover under Settings → Advanced → Files app sync, then Reset if needed, and send a problem report from that moment.</li>
+  <li><code>.Trash</code> may linger in the Files sync list (under investigation).</li>
+  <li>Leaving the app during a large branch switch can defer Files-app saves until you reopen the app.</li>
+  <li>Landscape is enabled only in viewers, diffs, commit detail and the merge editor.</li>
+  <li>The code index (find definitions/usages) is not in this build.</li>
+</ul>
+
+<h2>Frequently asked</h2>
+<ul>
+  <li><strong>Bitbucket repository list says "rejected"</strong> — use your <em>Atlassian account email</em> as the username and an API token (<code>ATATT…</code>) with <code>read:workspace</code> and <code>read:repository</code> scopes. The git push username is filled in automatically.</li>
+  <li><strong>"SSH host key changed" warning</strong> — don't continue unless you know the server really rotated its key; only then choose "Replace the stored key and continue".</li>
+  <li><strong>Edits from another app don't show in Changes</strong> — make sure you edited inside the Roost location in Files, then pull to refresh the Changes tab.</li>
+  <li><strong>Data safety</strong> — this is a beta. Don't keep the only copy of a repository here; push important changes to a remote.</li>
+</ul>
+
+<h2>Feature requests and questions</h2>
+<p>Please open a <a href="https://github.com/singlecoregames/roost/issues">GitHub Issue</a>. The source repository is private; this repository hosts the site and the issue tracker.</p>
+</article>
+
+<footer>
+  <span>© 2026 Singlecore Games</span>
+  <span><a href="./">홈</a> · <a href="privacy.html">개인정보 정책</a> · <a href="en/">English</a></span>
+</footer>
+</div>
+</body>
+</html>

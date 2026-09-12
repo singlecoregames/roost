@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Roost 개인정보 정책 · Privacy Policy</title>
+<link rel="icon" href="assets/icon.png">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <a class="brand" href="./"><img src="assets/icon.png" alt=""> Roost</a>
+  <nav><a href="support.html">지원</a><a href="privacy.html">개인정보</a><a href="https://github.com/singlecoregames/roost/issues">피드백</a><a class="lang" href="#en">English</a></nav>
+</header>
+
+<article class="doc" id="ko">
+<h1>개인정보 정책</h1>
+<p class="meta">시행 2026-09-08 · 적용 대상: Roost iOS 앱(App Store·TestFlight 배포본)</p>
+
+<h2>요약</h2>
+<p><strong>Roost는 사용자 데이터를 수집하지 않습니다.</strong> 분석·추적 도구가 없고, 개발자가 운영하는 서버도 없습니다. 앱이 네트워크에 접속하는 것은 사용자가 직접 지정한 Git 원격 저장소와 로그인한 호스팅 서비스뿐입니다.</p>
+
+<h2>1. 앱이 기기에 저장하는 것</h2>
+<ul>
+  <li><strong>저장소</strong> — 클론하거나 가져온 Git 저장소의 파일과 히스토리. 앱 전용 컨테이너에 저장되고, 사용자가 켠 경우 iOS 파일 앱에 폴더로 노출됩니다.</li>
+  <li><strong>인증 정보</strong> — 액세스 토큰·SSH 개인키·자동화 키는 iOS Keychain에 "이 기기에서만"(백업 이식 불가) 속성으로 저장됩니다. SSH 개인키는 앱 밖으로 내보내지지 않습니다.</li>
+  <li><strong>설정과 로그</strong> — 커밋 작성자 이름·이메일, 테마·언어 설정, 그리고 문제 진단용 로그(최근 며칠, 기기 안에서만 회전 보관).</li>
+</ul>
+<p>이 데이터는 앱을 삭제하면 함께 삭제됩니다. iCloud 백업에 포함되는지는 iOS의 앱 백업 설정을 따릅니다(인증 정보는 제외).</p>
+
+<h2>2. 앱이 네트워크로 보내는 것</h2>
+<ul>
+  <li><strong>Git 원격 저장소</strong> — 사용자가 클론·푸시·풀·페치할 때 해당 원격(GitHub, GitLab, Bitbucket, Gitea, 자체 호스팅 등)과 직접 통신합니다. 인증 정보는 해당 서버에만 전달됩니다.</li>
+  <li><strong>호스팅 서비스 로그인·저장소 목록</strong> — GitHub·GitLab.com 로그인(OAuth Device Flow)과 저장소 목록 조회는 그 서비스의 공식 API를 사용합니다. 각 서비스의 개인정보 정책이 적용됩니다.</li>
+  <li><strong>백그라운드 페치</strong> — iOS가 허용하는 시간에 등록된 원격을 페치해 위젯을 갱신합니다. 원격 외 다른 곳에는 접속하지 않습니다.</li>
+</ul>
+<p>그 외의 서버 통신은 없습니다. 광고·분석·크래시 수집 SDK가 없습니다.</p>
+
+<h2>3. 문제 보고(베타)</h2>
+<p>설정 → 서포트 → 문제 보고에서 사용자가 직접 만드는 진단 번들에는 다음만 들어갑니다: 기기 모델·iOS 버전·앱 버전, 앱·파일 앱 확장 로그, 파일 앱 동기화 상태, MetricKit 진단(있을 때). <strong>저장소 이름·경로·파일 내용·인증 정보는 포함되지 않습니다.</strong> 번들은 사용자가 공유 시트로 보낼 때만 기기를 떠나며, 받은 번들은 해당 문제 해결에만 쓰고 이후 삭제합니다.</p>
+
+<h2>4. TestFlight·App Store</h2>
+<p>TestFlight 베타에서는 Apple이 크래시 로그와 테스터 피드백을 개발자에게 전달할 수 있습니다. 이는 Apple의 <a href="https://www.apple.com/legal/privacy/">개인정보 정책</a>과 TestFlight 약관을 따르며, 사용자가 iOS 설정에서 끌 수 있습니다.</p>
+
+<h2>5. 아동</h2>
+<p>Roost는 데이터를 수집하지 않으므로 연령별로 다른 처리를 하지 않습니다.</p>
+
+<h2>6. 변경</h2>
+<p>정책이 바뀌면 이 페이지의 시행일을 갱신하고, 수집 항목이 생기는 변경은 앱 업데이트 노트에 명시합니다.</p>
+
+<h2>7. 문의</h2>
+<p>GitHub: <a href="https://github.com/singlecoregames/roost/issues">singlecoregames/roost Issues</a>
+<!-- TODO(FB-04): 이메일 주소를 쓰기로 하면 여기에 추가 --></p>
+</article>
+
+<hr>
+
+<article class="doc" id="en" lang="en">
+<h1>Privacy Policy</h1>
+<p class="meta">Effective 2026-09-08 · Applies to the Roost iOS app (App Store and TestFlight builds)</p>
+
+<h2>Summary</h2>
+<p><strong>Roost does not collect user data.</strong> There are no analytics or tracking SDKs and no developer-operated servers. The only network connections the app makes are to the Git remotes you configure and the hosting services you sign in to.</p>
+
+<h2>1. What the app stores on your device</h2>
+<ul>
+  <li><strong>Repositories</strong> — files and history of the Git repositories you clone or import, in the app's own container; exposed as folders in the iOS Files app when you enable it.</li>
+  <li><strong>Credentials</strong> — access tokens, SSH private keys and automation keys live in the iOS Keychain with the "this device only" attribute (not migrated by backups). SSH private keys never leave the app.</li>
+  <li><strong>Settings and logs</strong> — commit author name/email, theme and language, and diagnostic logs (last few days, rotated on device).</li>
+</ul>
+<p>Deleting the app deletes this data. Inclusion in iCloud backups follows your iOS app-backup settings (credentials are excluded).</p>
+
+<h2>2. What the app sends over the network</h2>
+<ul>
+  <li><strong>Git remotes</strong> — clone, push, pull and fetch talk directly to the remote you chose (GitHub, GitLab, Bitbucket, Gitea, self-hosted, …). Credentials go only to that server.</li>
+  <li><strong>Hosting service sign-in and repository lists</strong> — GitHub and GitLab.com sign-in (OAuth device flow) and repository listing use those services' official APIs, under their own privacy policies.</li>
+  <li><strong>Background fetch</strong> — when iOS allows, the app fetches registered remotes to refresh widgets. Nothing else is contacted.</li>
+</ul>
+<p>There is no other server communication. No advertising, analytics or crash-collection SDKs.</p>
+
+<h2>3. Problem reports (beta)</h2>
+<p>A diagnostic bundle you create yourself in Settings → Support → Problem report contains only: device model, iOS version, app version, app and Files-extension logs, Files sync status, and MetricKit diagnostics when present. <strong>Repository names, paths, file contents and credentials are never included.</strong> The bundle leaves your device only when you send it via the share sheet; received bundles are used solely to resolve that issue and then deleted.</p>
+
+<h2>4. TestFlight and the App Store</h2>
+<p>During the TestFlight beta, Apple may forward crash logs and tester feedback to the developer under Apple's <a href="https://www.apple.com/legal/privacy/">privacy policy</a> and the TestFlight terms. You can turn this off in iOS Settings.</p>
+
+<h2>5. Children</h2>
+<p>Roost collects no data and therefore applies no age-specific processing.</p>
+
+<h2>6. Changes</h2>
+<p>When this policy changes we update the effective date on this page; any change that introduces data collection is called out in the app's release notes.</p>
+
+<h2>7. Contact</h2>
+<p>GitHub: <a href="https://github.com/singlecoregames/roost/issues">singlecoregames/roost Issues</a></p>
+</article>
+
+<footer>
+  <span>© 2026 Singlecore Games</span>
+  <span><a href="./">홈</a> · <a href="support.html">지원</a> · <a href="en/">English</a></span>
+</footer>
+</div>
+</body>
+</html>

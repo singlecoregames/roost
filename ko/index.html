@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Roost — iPhone·iPad용 무료 Git 클라이언트</title>
+<meta name="description" content="Roost는 iPhone과 iPad에서 클론·커밋·푸시·머지를 끝까지 할 수 있는 무료 네이티브 Git 클라이언트입니다. 파일 앱과 연결되고, 게임 개발 파일 뷰어를 갖췄습니다.">
+<link rel="icon" href="../assets/icon.png">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+<symbol id="i-aseprite" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><title>Aseprite</title><path d="M4.006 0v1.6h15.988V0zm15.988 1.6v1.6h1.6V1.6zm1.6 1.6v14.4h-1.6v1.6H4.006v-1.6h-1.6V3.2H.809v17.6h1.599v1.6h1.599V24h15.988v-1.6h1.6v-1.6h1.598V3.2zm-19.187 0h1.599V1.6h-1.6zm4.796 3.2v6.4h1.6V6.4zm7.995 0v6.4h1.599V6.4z"/></symbol>
+<symbol id="i-box" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z" /> <path d="m3.3 7 8.7 5 8.7-5" /> <path d="M12 22V12" /></symbol>
+<symbol id="i-chart-line" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16" /> <path d="m19 9-5 5-4-4-3 3" /></symbol>
+<symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m16 18 6-6-6-6" /> <path d="m8 6-6 6 6 6" /></symbol>
+<symbol id="i-compass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /> <path d="m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z" /></symbol>
+<symbol id="i-folder" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z" /></symbol>
+<symbol id="i-gamepad-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="6" x2="10" y1="11" y2="11" /> <line x1="8" x2="8" y1="9" y2="13" /> <line x1="15" x2="15.01" y1="12" y2="12" /> <line x1="18" x2="18.01" y1="10" y2="10" /> <path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z" /></symbol>
+<symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /> <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" /> <path d="M2 12h20" /></symbol>
+<symbol id="i-headphones" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3" /></symbol>
+<symbol id="i-image" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" ry="2" /> <circle cx="9" cy="9" r="2" /> <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" /></symbol>
+<symbol id="i-key" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m2 21 9.6-9.6" /> <path d="m7.5 15.5 2.3 2.3a1 1 0 0 1 0 1.4l-2.1 2.1a1 1 0 0 1-1.4 0L4 19" /> <circle cx="15.5" cy="7.5" r="5.5" /></symbol>
+<symbol id="i-map" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z" /> <path d="M15 5.764v15" /> <path d="M9 3.236v15" /></symbol>
+<symbol id="i-markdown" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><title>Markdown</title><path d="M22.27 19.385H1.73A1.73 1.73 0 010 17.655V6.345a1.73 1.73 0 011.73-1.73h20.54A1.73 1.73 0 0124 6.345v11.308a1.73 1.73 0 01-1.73 1.731zM5.769 15.923v-4.5l2.308 2.885 2.307-2.885v4.5h2.308V8.078h-2.308l-2.307 2.885-2.308-2.885H3.46v7.847zM21.232 12h-2.309V8.077h-2.307V12h-2.308l3.461 4.039z"/></symbol>
+<symbol id="i-monitor" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2" /> <line x1="8" x2="16" y1="21" y2="21" /> <line x1="12" x2="12" y1="17" y2="21" /></symbol>
+<symbol id="i-package" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z" /> <path d="M12 22V12" /> <polyline points="3.29 7 12 12 20.71 7" /> <path d="m7.5 4.27 9 5.15" /></symbol>
+<symbol id="i-palette" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z" /> <circle cx="13.5" cy="6.5" r=".5" fill="currentColor" /> <circle cx="17.5" cy="10.5" r=".5" fill="currentColor" /> <circle cx="6.5" cy="12.5" r=".5" fill="currentColor" /> <circle cx="8.5" cy="7.5" r=".5" fill="currentColor" /></symbol>
+<symbol id="i-puzzle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M15.39 4.39a1 1 0 0 0 1.68-.474 2.5 2.5 0 1 1 3.014 3.015 1 1 0 0 0-.474 1.68l1.683 1.682a2.414 2.414 0 0 1 0 3.414L19.61 15.39a1 1 0 0 1-1.68-.474 2.5 2.5 0 1 0-3.014 3.015 1 1 0 0 1 .474 1.68l-1.683 1.682a2.414 2.414 0 0 1-3.414 0L8.61 19.61a1 1 0 0 0-1.68.474 2.5 2.5 0 1 1-3.014-3.015 1 1 0 0 0 .474-1.68l-1.683-1.682a2.414 2.414 0 0 1 0-3.414L4.39 8.61a1 1 0 0 1 1.68.474 2.5 2.5 0 1 0 3.014-3.015 1 1 0 0 1-.474-1.68l1.683-1.682a2.414 2.414 0 0 1 3.414 0z" /></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" /></symbol>
+<symbol id="i-tag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z" /> <circle cx="7.5" cy="7.5" r=".5" fill="currentColor" /></symbol>
+<symbol id="i-terminal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19h8" /> <path d="m4 17 6-6-6-6" /></symbol>
+<symbol id="i-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M15.914 4a1.5 1.5 0 00-2.474-1.561l-9 9A1.5 1.5 0 005.5 14h4.002a.5.5 0 01.471.666L8.086 20a1.5 1.5 0 002.475 1.56l9-9A1.5 1.5 0 0018.5 10h-3.997a.5.5 0 01-.472-.667z" /></symbol>
+</svg>
+<header class="top">
+  <div class="shell nav">
+    <a class="brand" href="./"><img src="../assets/icon.png" alt=""> Roost</a>
+    <nav class="nav-links">
+        <a href="#screens">About</a>
+        <a href="#features">Features</a>
+        <a href="../">English</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero shell">
+    <h1 class="lead">iOS에서 Git의 모든 기능을, 무료로.</h1>
+    <div class="cta-row">
+      <!-- TODO(REL-05): TestFlight 공개 링크로 교체 — https://testflight.apple.com/join/XXXXXXXX -->
+      <a class="btn primary" href="#beta">TestFlight 베타 참여</a>
+      <a class="btn" href="#features">Features</a>
+    </div>
+  </section>
+
+  <section class="screens" id="screens">
+    <div class="shell">
+    <div class="gallery" data-lang="ko" data-prefix="../">
+      <div class="gallery-main">
+        <div class="device"><img id="gallery-img" src="../screenshots/ko-light/01-repo-list.png" alt="저장소 목록" width="603" height="1311"></div>
+        <div class="gallery-caption" id="gallery-caption">저장소 목록</div>
+        <div class="shots-toggle" role="group" aria-label="스크린샷 외관">
+          <button type="button" data-mode="light">라이트</button><button type="button" data-mode="dark">다크</button>
+        </div>
+      </div>
+      <div class="thumbs">
+        <button class="thumb active" type="button" data-shot="01-repo-list" aria-label="저장소 목록"><img src="../screenshots/ko-light/01-repo-list.png" alt="" width="603" height="1311" loading="lazy"><span>저장소 목록</span></button>
+        <button class="thumb" type="button" data-shot="04-history-graph" aria-label="히스토리 그래프"><img src="../screenshots/ko-light/04-history-graph.png" alt="" width="603" height="1311" loading="lazy"><span>히스토리 그래프</span></button>
+        <button class="thumb" type="button" data-shot="06-merge-editor" aria-label="머지 에디터"><img src="../screenshots/ko-light/06-merge-editor.png" alt="" width="603" height="1311" loading="lazy"><span>머지 에디터</span></button>
+        <button class="thumb" type="button" data-shot="05-diff-split" aria-label="분할 diff"><img src="../screenshots/ko-light/05-diff-split.png" alt="" width="603" height="1311" loading="lazy"><span>분할 diff</span></button>
+        <button class="thumb" type="button" data-shot="03-changes-commit" aria-label="변경 사항 · 커밋"><img src="../screenshots/ko-light/03-changes-commit.png" alt="" width="603" height="1311" loading="lazy"><span>변경 사항 · 커밋</span></button>
+        <button class="thumb" type="button" data-shot="02-files" aria-label="파일 탭"><img src="../screenshots/ko-light/02-files.png" alt="" width="603" height="1311" loading="lazy"><span>파일 탭</span></button>
+        <button class="thumb" type="button" data-shot="08-viewers" aria-label="Aseprite 뷰어"><img src="../screenshots/ko-light/08-viewers.png" alt="" width="603" height="1311" loading="lazy"><span>Aseprite 뷰어</span></button>
+        <button class="thumb" type="button" data-shot="09-viewers-fbx" aria-label="FBX 뷰어"><img src="../screenshots/ko-light/09-viewers-fbx.png" alt="" width="603" height="1311" loading="lazy"><span>FBX 뷰어</span></button>
+      </div>
+    </div>
+      <p class="small beta-note" id="beta">베타 빌드입니다. 유일한 사본인 저장소는 넣지 마세요. 앱은 아무것도 수집하지 않고, 문제 보고 번들에도 저장소 이름·경로·내용은 들어가지 않습니다. <a href="../privacy.html">개인정보 정책</a></p>
+    </div>
+  </section>
+
+  <section class="feature" id="features">
+    <div class="shell">
+      <div class="sec-head"><div class="eyebrow">Features</div></div>
+      <h3 class="group">Git</h3>
+      <ul class="features">
+        <li><svg class="ic"><use href="#i-key"/></svg><div><b>HTTPS 토큰 · SSH 키</b><p>GitHub·GitLab 로그인, 개인 액세스 토큰, ed25519·Secure Enclave 키. 호스트 키 지문 확인.</p></div></li>
+        <li><svg class="ic"><use href="#i-globe"/></svg><div><b>저장소 목록에서 클론</b><p>GitHub · GitLab · Bitbucket · Gitea 계정의 저장소를 골라 클론. 얕은 클론 지원.</p></div></li>
+        <li><svg class="ic"><use href="#i-tag"/></svg><div><b>브랜치 · 태그 · 스태시</b><p>만들기 · 체크아웃 · 이름 변경 · 삭제. 태그 푸시. 스태시 저장 · 적용 · 팝.</p></div></li>
+        <li><svg class="ic"><use href="#i-puzzle"/></svg><div><b>머지 · 리베이스 · 충돌 해결</b><p>전용 머지 에디터: 구간별로 현재 · 상대 · 둘 다 · 직접 편집, 라인 단위 선택, 앞뒤 맥락과 3-way 원본.</p></div></li>
+        <li><svg class="ic"><use href="#i-chart-line"/></svg><div><b>히스토리 그래프</b><p>브랜치 레일 · 머지 · 태그 칩 · HEAD. 커밋 상세와 파일별 이력.</p></div></li>
+        <li><svg class="ic"><use href="#i-code"/></svg><div><b>diff</b><p>유니파이드 · 분할, 신택스 하이라이팅, 이미지 diff(전후 · 오버레이).</p></div></li>
+      </ul>
+      <h3 class="group">보기 · 편집</h3>
+      <ul class="features">
+        <li><svg class="ic"><use href="#i-terminal"/></svg><div><b>코드 뷰어 · 편집기</b><p>tree-sitter 하이라이팅 20+ 언어, 줄 번호, 랩핑, 파일 안 찾기, 외부 변경 자동 리로드.</p></div></li>
+        <li><svg class="ic"><use href="#i-markdown"/></svg><div><b>마크다운</b><p>미리보기 · 소스 전환, 상대 경로 이미지, 할 일 체크박스 토글.</p></div></li>
+        <li><svg class="ic"><use href="#i-compass"/></svg><div><b>저장소 검색 · 심볼</b><p>파일 이름과 내용, 현재 폴더 또는 전체. 함수 · 타입 선언으로 점프.</p></div></li>
+        <li><svg class="ic"><use href="#i-folder"/></svg><div><b>파일 앱 통합</b><p>저장소가 iOS 파일 앱에 폴더로. 어떤 앱에서든 편집하고 Roost에서 커밋.</p></div></li>
+        <li><svg class="ic"><use href="#i-map"/></svg><div><b>외부 폴더 연결</b><p>Logseq 같은 다른 앱의 폴더를 저장소로 쓰고 그 자리에서 커밋 · 푸시.</p></div></li>
+      </ul>
+      <h3 class="group">게임 개발 파일</h3>
+      <ul class="features">
+        <li><svg class="ic"><use href="#i-aseprite"/></svg><div><b>Aseprite</b><p>레이어 · 태그 · 프레임 타임라인, 재생, 픽셀 확대.</p></div></li>
+        <li><svg class="ic"><use href="#i-image"/></svg><div><b>이미지 · 텍스처</b><p>PNG · JPEG · HEIC · PSD · TGA · DDS · KTX2 · EXR · SVG. 체커보드, 채널 분리.</p></div></li>
+        <li><svg class="ic"><use href="#i-box"/></svg><div><b>3D 모델</b><p>glTF · GLB · USDZ · FBX · OBJ. 오빗 뷰, 노멀 · 베이스컬러 · UV 표시.</p></div></li>
+        <li><svg class="ic"><use href="#i-headphones"/></svg><div><b>오디오 · 폰트</b><p>WAV · Ogg Vorbis 파형과 재생. 폰트 미리보기.</p></div></li>
+        <li><svg class="ic"><use href="#i-gamepad-2"/></svg><div><b>Unity · Godot · 셰이더</b><p>프리팹 · 씬 구조, Unity GUID 참조 해석. GLSL · HLSL · GDScript 하이라이팅.</p></div></li>
+      </ul>
+      <h3 class="group">플랫폼</h3>
+      <ul class="features">
+        <li><svg class="ic"><use href="#i-monitor"/></svg><div><b>iPad</b><p>3칼럼 레이아웃, 키보드 단축키 전체(⌘ 길게 누르면 안내), 멀티 윈도우, Stage Manager.</p></div></li>
+        <li><svg class="ic"><use href="#i-zap"/></svg><div><b>단축어 · 위젯 · Spotlight</b><p>받기 · 보내기 · 커밋 자동화, 홈 화면 위젯, Live Activity, Spotlight 검색.</p></div></li>
+        <li><svg class="ic"><use href="#i-palette"/></svg><div><b>테마 · 언어</b><p>앱 컬러셋 4종, 신택스 테마 4종, 다크 모드, Dynamic Type. 한국어 · English · 日本語.</p></div></li>
+        <li><svg class="ic"><use href="#i-shield"/></svg><div><b>개인정보</b><p>수집 없음, 분석 도구 없음, 계정 없음. 문제 보고는 직접 보낼 때만.</p></div></li>
+      </ul>
+      <div class="roadmap-wrap">
+        <h3 class="group">앞으로 추가될 기능</h3>
+      <ul class="features roadmap">
+        <li><svg class="ic"><use href="#i-package"/></svg><div><b>서브모듈</b></div></li>
+        <li><svg class="ic"><use href="#i-gamepad-2"/></svg><div><b>게임 뷰어 확장</b></div></li>
+        <li><svg class="ic"><use href="#i-shield"/></svg><div><b>커밋 서명</b></div></li>
+      </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="shell footer-row">
+    <div>© 2026 Singlecore Games <span class="oss">· libgit2 · libssh2 · OpenSSL · Runestone 등 오픈소스 위에 만들어졌습니다. 아이콘 Lucide (ISC).</span></div>
+    <div class="footer-links">
+      <a href="../support.html">지원</a>
+      <a href="../privacy.html">개인정보 정책</a>
+      <a href="https://github.com/singlecoregames/roost/issues">GitHub</a>
+      <a href="../">English</a>
+    </div>
+  </div>
+</footer>
+<script>
+(function () {
+  var root = document.documentElement;
+  var stored = null;
+  try { stored = localStorage.getItem("roost-shots"); } catch (e) {}
+  var mode = stored || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  function apply() {
+    root.setAttribute("data-shots", mode);
+    document.querySelectorAll("[data-shot-src]").forEach(function (img) {
+      img.src = img.getAttribute("data-shot-src").replace("{mode}", mode);
+    });
+    document.querySelectorAll(".shots-toggle button").forEach(function (b) {
+      b.classList.toggle("active", b.getAttribute("data-mode") === mode);
+      b.setAttribute("aria-pressed", b.getAttribute("data-mode") === mode ? "true" : "false");
+    });
+    var g = document.querySelector(".gallery");
+    if (g) select(g.querySelector(".thumb.active"), true);
+  }
+  function select(btn, keep) {
+    var g = document.querySelector(".gallery");
+    if (!g || !btn) return;
+    var name = btn.getAttribute("data-shot");
+    var src = g.getAttribute("data-prefix") + "screenshots/" + g.getAttribute("data-lang") + "-" + mode + "/" + name + ".png";
+    var img = document.getElementById("gallery-img");
+    img.src = src;
+    img.alt = btn.getAttribute("aria-label");
+    document.getElementById("gallery-caption").textContent = btn.getAttribute("aria-label");
+    g.querySelectorAll(".thumb").forEach(function (t) { t.classList.toggle("active", t === btn); });
+    g.querySelectorAll(".thumb img").forEach(function (t) {
+      t.src = g.getAttribute("data-prefix") + "screenshots/" + g.getAttribute("data-lang") + "-" + mode + "/" + t.parentNode.getAttribute("data-shot") + ".png";
+    });
+  }
+  document.addEventListener("click", function (e) {
+    var t = e.target.closest(".shots-toggle button");
+    if (t) { mode = t.getAttribute("data-mode"); try { localStorage.setItem("roost-shots", mode); } catch (x) {} apply(); return; }
+    var th = e.target.closest(".thumb");
+    if (th) select(th);
+  });
+  apply();
+})();
+</script>
+</body>
+</html>

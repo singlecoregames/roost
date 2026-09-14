@@ -46,6 +46,16 @@ Roost is in beta. Keep a backup of any repository you can't afford to lose. The 
 
 To report a problem, create a bundle in the app under **Settings → Support → Problem report**, then open an [issue](https://github.com/singlecoregames/roost/issues/new) and attach it. The bundle contains only device model, iOS and app version, app logs, and sync status.
 
+## Q&A
+
+**Will Roost be open source?**
+
+It started out with open source in mind. But now that software is built with AI, publishing this much code gives people very little in return and mostly adds maintenance load, so it's on hold for now.
+
+**Is it really completely free?**
+
+Yes. There are no plans to monetize it. At most, there may be ways to support the developer that don't touch app features, such as a link to other apps or a tip jar.
+
 ## About this repository
 
 This repository hosts the website (GitHub Pages) and the issue tracker. The app source is private.

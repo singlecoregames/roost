@@ -1,10 +1,12 @@
 ---
-name: 기능 제안 / Feature request
-about: 있었으면 하는 것 / Something you wish Roost did
+name: Feature request
+about: Something you wish Roost did
 ---
 
-**어떤 상황에서 / When**
+**When** (the situation where you missed it)
 
 
-**무엇이 있으면 / What would help**
+**What you'd like Roost to do**
 
+
+**Workaround you use today** (if any)

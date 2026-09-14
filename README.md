@@ -60,6 +60,6 @@ Yes. There are no plans to monetize it. At most, there may be ways to support th
 
 This repository hosts the website (GitHub Pages) and the issue tracker. The app source is private.
 
-Built with libgit2, libssh2, OpenSSL, Runestone, and other open-source software. Icons by Lucide (ISC).
+Built with libgit2, libssh2, OpenSSL, Runestone, and other open-source software. Icons by Lucide (ISC). The full list with versions, licenses, and links: [Open-source software in Roost](OPEN-SOURCE.md).
 
 © 2026 Singlecore Games

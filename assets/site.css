@@ -174,6 +174,12 @@ section.screens { padding: 8px 0 90px; }
 /* 로드맵 — 베타 절 아래, 좌측 정렬 목록 */
 /* 로드맵 — Features 목록 아래, 그룹 라벨과 같은 톤 */
 .roadmap-wrap { margin-top: 8px; }
+/* Q&A — 질문 굵게, 답은 본문 톤 한 문단. 한 칼럼 */
+.faq { list-style: none; margin: 20px 0 0; padding: 0; max-width: 760px; }
+.faq li { padding: 22px 0; border-top: 1px solid var(--line); }
+.faq li:last-child { border-bottom: 1px solid var(--line); }
+.faq b { display: block; font-size: 18px; font-weight: 650; letter-spacing: -.01em; margin-bottom: 8px; }
+.faq p { margin: 0; font-size: 16px; line-height: 1.6; color: var(--muted); word-break: keep-all; }
 .roadmap-wrap h3.group { margin-bottom: 6px; }
 .features.roadmap li { align-items: center; padding: 16px 0; }
 .features.roadmap .ic { margin-top: 0; }

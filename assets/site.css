@@ -92,7 +92,7 @@ section.feature { padding: 110px 0; border-top: 1px solid var(--line); }
 .zoom:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
 .lightbox { border: 0; padding: 0; background: transparent; width: fit-content; max-width: calc(100vw - 32px); max-height: none; overflow: visible; margin: auto; }
 .lightbox::backdrop { background: rgba(0, 0, 0, .72); backdrop-filter: blur(8px); }
-.lightbox img { display: block; width: auto; height: min(88vh, 1311px); max-width: calc(100vw - 32px); object-fit: contain; border-radius: 28px; border: 1px solid rgba(255, 255, 255, .18); box-shadow: 0 30px 80px rgba(0, 0, 0, .5); background: var(--paper); cursor: zoom-out; }
+.lightbox img { display: block; width: auto; height: min(84vh, 1311px); height: min(84dvh, 1311px); max-width: calc(100vw - 32px); object-fit: contain; border-radius: 28px; border: 1px solid rgba(255, 255, 255, .18); box-shadow: 0 30px 80px rgba(0, 0, 0, .5); background: var(--paper); cursor: zoom-out; }
 .lightbox p { margin: 12px 0 0; text-align: center; color: #fff; font-size: 14px; opacity: .85; }
 .lightbox-close { position: absolute; top: -14px; right: -14px; width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--line); background: var(--bg); color: var(--ink); font-size: 24px; line-height: 1; cursor: pointer; box-shadow: var(--shadow); }
 
@@ -167,7 +167,8 @@ article.doc hr { border: 0; border-top: 1px solid var(--line); margin: 40px 0; }
   .tile { scroll-snap-align: start; }
   .tile img { border-radius: 16px; }
   .zoom { border-radius: 16px; }
-  .lightbox img { height: auto; width: min(100vw - 32px, 420px); border-radius: 22px; }
+  /* 모바일 브라우저 툴바가 위아래를 먹으므로 폭이 아니라 dvh 높이로 맞춘다 (모바일 크롬에서 잘리던 문제, 2026-09-16) */
+  .lightbox img { width: auto; height: 76vh; height: 76dvh; max-width: calc(100vw - 32px); border-radius: 22px; }
   .tile figcaption { font-size: 12px; margin-top: 6px; }
   .link-mark { width: 48px; height: 48px; }
   .link-mark svg { width: 24px; height: 24px; }

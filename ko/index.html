@@ -56,6 +56,12 @@
           <button class="btn primary" type="submit" autofocus>닫기</button>
         </form>
       </dialog>
+      <!-- 스크린샷 확대 보기 — 뷰어 타일·파일 앱 쌍을 누르면 연다 [2026-09-15] -->
+      <dialog class="lightbox" id="lightbox" aria-label="스크린샷 크게 보기">
+        <button type="button" class="lightbox-close" data-lightbox-close aria-label="닫기">×</button>
+        <img id="lightbox-img" alt="" width="603" height="1311">
+        <p id="lightbox-cap"></p>
+      </dialog>
       <a class="btn" href="#features">Features</a>
     </div>
   </section>
@@ -95,7 +101,7 @@
         <p>Files 앱을 통해 파일을 편집하고 Roost에서 변경 내용을 커밋합니다. 저장소가 파일 앱에 폴더로 나타나므로 어떤 편집기든 그대로 씁니다.</p>
         <div class="meta">파일 앱 · 외부 변경 감지 · 커밋 시트</div>
       </div>
-      <div class="visual"><div class="pair linked"><img class="phone" src="../screenshots/ko-light/02-files.png" data-shot-src="../screenshots/ko-{mode}/02-files.png" alt="다른 앱과 함께 사용" width="603" height="1311"><span class="link-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M3 21v-5h5"/></svg></span><img class="phone" src="../screenshots/ko-light/10-files-app.png" data-shot-src="../screenshots/ko-{mode}/10-files-app.png" alt="같은 폴더를 연 iOS 파일 앱" width="603" height="1311"></div></div>
+      <div class="visual"><div class="pair linked"><button type="button" class="zoom" data-zoom aria-label="다른 앱과 함께 사용"><img class="phone" src="../screenshots/ko-light/02-files.png" data-shot-src="../screenshots/ko-{mode}/02-files.png" alt="다른 앱과 함께 사용" width="603" height="1311"></button><span class="link-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M3 21v-5h5"/></svg></span><button type="button" class="zoom" data-zoom aria-label="같은 폴더를 연 iOS 파일 앱"><img class="phone" src="../screenshots/ko-light/10-files-app.png" data-shot-src="../screenshots/ko-{mode}/10-files-app.png" alt="같은 폴더를 연 iOS 파일 앱" width="603" height="1311"></button></div></div>
     </div>
   </section>
   <section class="feature viewers" id="viewers">
@@ -103,21 +109,21 @@
       <div class="copy narrow center">
         <div class="eyebrow">뷰어</div>
         <h2>파일을 한 곳에서 편하게</h2>
-        <p>코드와 마크다운, Aseprite와 텍스처, 3D 모델과 오디오, Godot 씬, PDF, JSON, CSV 표, zip 목록, HTML 페이지를 앱을 옮겨 다니지 않고 저장소 안에서 봅니다. Roost가 그리지 못하는 형식은 빠른 보기로 봅니다.</p>
+        <p>코드와 마크다운, Aseprite와 이미지, 3D 모델과 오디오, Godot 씬, HTML 페이지, PDF, JSON, CSV 표, 폰트를 앱을 옮겨 다니지 않고 저장소 안에서 봅니다. zip 목록도 열리고, Roost가 그리지 못하는 형식은 빠른 보기로 봅니다. 타일을 누르면 크게 볼 수 있습니다.</p>
       </div>
       <div class="tiles">
-        <figure class="tile"><img src="../screenshots/ko-light/11-viewer-code.png" data-shot-src="../screenshots/ko-{mode}/11-viewer-code.png" alt="코드" width="603" height="1311" loading="lazy"><figcaption>코드</figcaption></figure>
-        <figure class="tile"><img src="../screenshots/ko-light/12-viewer-markdown.png" data-shot-src="../screenshots/ko-{mode}/12-viewer-markdown.png" alt="마크다운" width="603" height="1311" loading="lazy"><figcaption>마크다운</figcaption></figure>
-        <figure class="tile"><img src="../screenshots/ko-light/08-viewers.png" data-shot-src="../screenshots/ko-{mode}/08-viewers.png" alt="Aseprite" width="603" height="1311" loading="lazy"><figcaption>Aseprite</figcaption></figure>
-        <figure class="tile"><img src="../screenshots/ko-light/13-viewer-image.png" data-shot-src="../screenshots/ko-{mode}/13-viewer-image.png" alt="이미지 · 텍스처" width="603" height="1311" loading="lazy"><figcaption>이미지 · 텍스처</figcaption></figure>
-        <figure class="tile"><img src="../screenshots/ko-light/09-viewers-fbx.png" data-shot-src="../screenshots/ko-{mode}/09-viewers-fbx.png" alt="3D 모델" width="603" height="1311" loading="lazy"><figcaption>3D 모델</figcaption></figure>
-        <figure class="tile"><img src="../screenshots/ko-light/14-viewer-audio.png" data-shot-src="../screenshots/ko-{mode}/14-viewer-audio.png" alt="오디오" width="603" height="1311" loading="lazy"><figcaption>오디오</figcaption></figure>
-        <figure class="tile"><img src="../screenshots/ko-light/15-viewer-scene.png" data-shot-src="../screenshots/ko-{mode}/15-viewer-scene.png" alt="Godot 씬" width="603" height="1311" loading="lazy"><figcaption>Godot 씬</figcaption></figure>
-        <figure class="tile"><img src="../screenshots/ko-light/16-viewer-html.png" data-shot-src="../screenshots/ko-{mode}/16-viewer-html.png" alt="HTML" width="603" height="1311" loading="lazy"><figcaption>HTML</figcaption></figure>
-        <figure class="tile"><img src="../screenshots/ko-light/17-viewer-pdf.png" data-shot-src="../screenshots/ko-{mode}/17-viewer-pdf.png" alt="PDF" width="603" height="1311" loading="lazy"><figcaption>PDF</figcaption></figure>
-        <figure class="tile"><img src="../screenshots/ko-light/18-viewer-json.png" data-shot-src="../screenshots/ko-{mode}/18-viewer-json.png" alt="JSON" width="603" height="1311" loading="lazy"><figcaption>JSON</figcaption></figure>
-        <figure class="tile"><img src="../screenshots/ko-light/19-viewer-table.png" data-shot-src="../screenshots/ko-{mode}/19-viewer-table.png" alt="CSV 표" width="603" height="1311" loading="lazy"><figcaption>CSV 표</figcaption></figure>
-        <figure class="tile"><img src="../screenshots/ko-light/20-viewer-archive.png" data-shot-src="../screenshots/ko-{mode}/20-viewer-archive.png" alt="zip 목록" width="603" height="1311" loading="lazy"><figcaption>zip 목록</figcaption></figure>
+        <figure class="tile"><button type="button" class="zoom" data-zoom aria-label="코드"><img src="../screenshots/ko-light/11-viewer-code.png" data-shot-src="../screenshots/ko-{mode}/11-viewer-code.png" alt="코드" width="603" height="1311" loading="lazy"></button><figcaption>코드</figcaption></figure>
+        <figure class="tile"><button type="button" class="zoom" data-zoom aria-label="마크다운"><img src="../screenshots/ko-light/12-viewer-markdown.png" data-shot-src="../screenshots/ko-{mode}/12-viewer-markdown.png" alt="마크다운" width="603" height="1311" loading="lazy"></button><figcaption>마크다운</figcaption></figure>
+        <figure class="tile"><button type="button" class="zoom" data-zoom aria-label="Aseprite"><img src="../screenshots/ko-light/08-viewers.png" data-shot-src="../screenshots/ko-{mode}/08-viewers.png" alt="Aseprite" width="603" height="1311" loading="lazy"></button><figcaption>Aseprite</figcaption></figure>
+        <figure class="tile"><button type="button" class="zoom" data-zoom aria-label="이미지 · 텍스처"><img src="../screenshots/ko-light/13-viewer-image.png" data-shot-src="../screenshots/ko-{mode}/13-viewer-image.png" alt="이미지 · 텍스처" width="603" height="1311" loading="lazy"></button><figcaption>이미지 · 텍스처</figcaption></figure>
+        <figure class="tile"><button type="button" class="zoom" data-zoom aria-label="3D 모델"><img src="../screenshots/ko-light/09-viewers-fbx.png" data-shot-src="../screenshots/ko-{mode}/09-viewers-fbx.png" alt="3D 모델" width="603" height="1311" loading="lazy"></button><figcaption>3D 모델</figcaption></figure>
+        <figure class="tile"><button type="button" class="zoom" data-zoom aria-label="오디오"><img src="../screenshots/ko-light/14-viewer-audio.png" data-shot-src="../screenshots/ko-{mode}/14-viewer-audio.png" alt="오디오" width="603" height="1311" loading="lazy"></button><figcaption>오디오</figcaption></figure>
+        <figure class="tile"><button type="button" class="zoom" data-zoom aria-label="Godot 씬"><img src="../screenshots/ko-light/15-viewer-scene.png" data-shot-src="../screenshots/ko-{mode}/15-viewer-scene.png" alt="Godot 씬" width="603" height="1311" loading="lazy"></button><figcaption>Godot 씬</figcaption></figure>
+        <figure class="tile"><button type="button" class="zoom" data-zoom aria-label="HTML"><img src="../screenshots/ko-light/16-viewer-html.png" data-shot-src="../screenshots/ko-{mode}/16-viewer-html.png" alt="HTML" width="603" height="1311" loading="lazy"></button><figcaption>HTML</figcaption></figure>
+        <figure class="tile"><button type="button" class="zoom" data-zoom aria-label="PDF"><img src="../screenshots/ko-light/17-viewer-pdf.png" data-shot-src="../screenshots/ko-{mode}/17-viewer-pdf.png" alt="PDF" width="603" height="1311" loading="lazy"></button><figcaption>PDF</figcaption></figure>
+        <figure class="tile"><button type="button" class="zoom" data-zoom aria-label="JSON"><img src="../screenshots/ko-light/18-viewer-json.png" data-shot-src="../screenshots/ko-{mode}/18-viewer-json.png" alt="JSON" width="603" height="1311" loading="lazy"></button><figcaption>JSON</figcaption></figure>
+        <figure class="tile"><button type="button" class="zoom" data-zoom aria-label="CSV 표"><img src="../screenshots/ko-light/19-viewer-table.png" data-shot-src="../screenshots/ko-{mode}/19-viewer-table.png" alt="CSV 표" width="603" height="1311" loading="lazy"></button><figcaption>CSV 표</figcaption></figure>
+        <figure class="tile"><button type="button" class="zoom" data-zoom aria-label="폰트"><img src="../screenshots/ko-light/20-viewer-font.png" data-shot-src="../screenshots/ko-{mode}/20-viewer-font.png" alt="폰트" width="603" height="1311" loading="lazy"></button><figcaption>폰트</figcaption></figure>
       </div>
     </div>
   </section>
@@ -210,6 +216,16 @@
     var th = e.target.closest(".thumb");
     if (th) select(th);
     if (e.target.closest("[data-beta-cta]")) { var d = document.getElementById("beta-dialog"); if (d && d.showModal) d.showModal(); }
+    var z = e.target.closest("[data-zoom]");
+    var lb = document.getElementById("lightbox");
+    if (z && lb && lb.showModal) {
+      var img = z.querySelector("img");
+      document.getElementById("lightbox-img").src = img.currentSrc || img.src;
+      document.getElementById("lightbox-img").alt = img.alt;
+      document.getElementById("lightbox-cap").textContent = z.getAttribute("aria-label") || img.alt;
+      lb.showModal();
+    }
+    if (lb && lb.open && !z && e.target.closest("#lightbox") === lb) lb.close();
   });
   apply();
 })();

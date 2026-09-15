@@ -23,7 +23,7 @@
 | 파일 | 화면 | 쓰이는 곳 |
 |---|---|---|
 | `02-files.png` + `10-files-app.png` | Roost 파일 탭의 `src/` ⇄ iOS 파일 앱에서 연 같은 `src/` (목록 보기 시도, 아무것도 고치기 전에 촬영) | "다른 앱과 함께 사용" |
-| `11`~`20-viewer-*.png`, `08-viewers.png`, `09-viewers-fbx.png` | 코드·마크다운·Aseprite·이미지·FBX·오디오·Godot 씬·HTML·PDF·JSON·CSV·zip 뷰어 | "파일을 한 곳에서 편하게" 타일 12장(전체 비율) |
+| `11`~`20-viewer-*.png`, `08-viewers.png`, `09-viewers-fbx.png` | 코드(player.gd)·마크다운·Aseprite·이미지(docs/keyart.png)·FBX·오디오·Godot 씬·HTML(docs/site)·PDF(4쪽 이미지 덱)·JSON(levels·[0]·tuning 펼침)·CSV(16행)·폰트(Roboto) 뷰어 | "파일을 한 곳에서 편하게" 타일 12장(전체 비율, 누르면 확대 보기) |
 
 - 갤러리·타일은 페이지 언어 세트. 라이트/다크 토글은 `<html data-shots>`와 `localStorage("roost-shots")`로 세트 폴더만 바꾼다(`gen_site.py`의 `GALLERY_JS`).
 - 다시 찍기: 전용 시뮬레이터에서 `ROOST_UITEST_SIM=<UDID> Scripts/run-uitests.sh SiteScreenshotUITests`(약 20분, 공개 리포 클론은 네트워크 필요)

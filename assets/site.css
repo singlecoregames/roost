@@ -70,6 +70,9 @@ section.feature { padding: 110px 0; border-top: 1px solid var(--line); }
 .visual .pair .phone:last-child { margin-top: 48px; }
 /* 연결된 쌍 — Roost 파일 목록 ⇄ 파일 앱. 폰 크기·간격·높이 차는 다른 쌍과 같고, 동기화 배지가 그 위에 겹친다 */
 .visual .pair.linked { position: relative; }
+.visual .pair .zoom { width: min(240px, 46%); }
+.visual .pair .zoom .phone { width: 100%; }
+.visual .pair .zoom:last-of-type { margin-top: 48px; }
 .link-mark { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 60px; height: 60px; border-radius: 50%;
   display: flex; align-items: center; justify-content: center; color: var(--accent); background: var(--paper); border: 1px solid var(--line);
   box-shadow: 0 10px 28px rgba(0, 0, 0, .28), 0 2px 6px rgba(0, 0, 0, .18); }
@@ -84,6 +87,14 @@ section.feature { padding: 110px 0; border-top: 1px solid var(--line); }
 .tile img { width: 100%; height: auto; border-radius: 22px; border: 1px solid var(--line);
   box-shadow: var(--shadow); background: var(--paper); display: block; }
 .tile figcaption { margin-top: 10px; text-align: center; font-size: 14px; color: var(--muted); }
+/* 확대 보기 — 타일(button.zoom)과 파일 앱 쌍을 누르면 dialog에 원본 크기로 */
+.zoom { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; border-radius: 22px; color: inherit; font: inherit; }
+.zoom:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+.lightbox { border: 0; padding: 0; background: transparent; width: fit-content; max-width: calc(100vw - 32px); max-height: none; overflow: visible; margin: auto; }
+.lightbox::backdrop { background: rgba(0, 0, 0, .72); backdrop-filter: blur(8px); }
+.lightbox img { display: block; width: auto; height: min(88vh, 1311px); max-width: calc(100vw - 32px); object-fit: contain; border-radius: 28px; border: 1px solid rgba(255, 255, 255, .18); box-shadow: 0 30px 80px rgba(0, 0, 0, .5); background: var(--paper); cursor: zoom-out; }
+.lightbox p { margin: 12px 0 0; text-align: center; color: #fff; font-size: 14px; opacity: .85; }
+.lightbox-close { position: absolute; top: -14px; right: -14px; width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--line); background: var(--bg); color: var(--ink); font-size: 24px; line-height: 1; cursor: pointer; box-shadow: var(--shadow); }
 
 /* 게임 개발 · 가격 · 마지막 — 가운데 정렬 */
 .game, .pricing, .final { text-align: center; }
@@ -149,10 +160,14 @@ article.doc hr { border: 0; border-top: 1px solid var(--line); margin: 40px 0; }
   .visual .phone { width: min(260px, 72vw); }
   .visual .pair .phone { width: 46%; }
   .visual .pair .phone:last-child { margin-top: 32px; }
+  .visual .pair .zoom { width: 46%; }
+  .visual .pair .zoom:last-of-type { margin-top: 32px; }
   .tiles { grid-template-columns: none; grid-auto-flow: column; grid-template-rows: auto auto; grid-auto-columns: 128px; gap: 16px 12px;
     margin-top: 28px; overflow-x: auto; padding: 4px 0 8px; scroll-snap-type: x proximity; }
   .tile { scroll-snap-align: start; }
   .tile img { border-radius: 16px; }
+  .zoom { border-radius: 16px; }
+  .lightbox img { height: auto; width: min(100vw - 32px, 420px); border-radius: 22px; }
   .tile figcaption { font-size: 12px; margin-top: 6px; }
   .link-mark { width: 48px; height: 48px; }
   .link-mark svg { width: 24px; height: 24px; }

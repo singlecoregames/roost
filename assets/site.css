@@ -68,6 +68,12 @@ section.feature { padding: 110px 0; border-top: 1px solid var(--line); }
 .visual .pair { display: flex; gap: 20px; justify-content: center; align-items: flex-start; }
 .visual .pair .phone { width: min(240px, 46%); }
 .visual .pair .phone:last-child { margin-top: 48px; }
+/* 연결된 쌍 — Roost 파일 목록 ⇄ 파일 앱. 어긋남 없이 나란히, 사이에 양방향 화살표 */
+.visual .pair.linked { gap: 12px; align-items: center; }
+.visual .pair.linked .phone { width: min(220px, 42%); }
+.visual .pair.linked .phone:last-child { margin-top: 0; }
+.link-mark { flex: 0 0 48px; color: var(--accent); display: flex; }
+.link-mark svg { width: 48px; height: 24px; }
 .copy.narrow { max-width: 760px; }
 .copy.narrow p { max-width: 640px; }
 
@@ -135,6 +141,10 @@ article.doc hr { border: 0; border-top: 1px solid var(--line); margin: 40px 0; }
   .visual .phone { width: min(260px, 72vw); }
   .visual .pair .phone { width: 46%; }
   .visual .pair .phone:last-child { margin-top: 32px; }
+  .visual .pair.linked .phone { width: 42%; }
+  .visual .pair.linked .phone:last-child { margin-top: 0; }
+  .link-mark { flex-basis: 36px; }
+  .link-mark svg { width: 36px; height: 18px; }
   .more, .features { grid-template-columns: 1fr; }
   .features li { padding: 16px 0; }
   .features p { font-size: 14.5px; }

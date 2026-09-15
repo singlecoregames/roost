@@ -76,12 +76,12 @@ section.feature { padding: 110px 0; border-top: 1px solid var(--line); }
 .link-mark svg { width: 30px; height: 30px; stroke-width: 2.5; }
 .copy.narrow { max-width: 760px; }
 .copy.narrow p { max-width: 640px; }
-/* 뷰어 절 — 설명 한 덩어리 + 스크린샷 상단을 3:4로 자른 타일 격자 (세로 화면에서 길어지지 않게 3열) */
+/* 뷰어 절 — 설명 한 덩어리 + 화면 전체 비율 타일 격자. 데스크톱 6열 2줄, 태블릿 4열, 모바일은 2줄 가로 스크롤(썸네일 띠와 같은 방식) */
 .copy.center { margin: 0 auto; text-align: center; }
 .copy.center p { margin-left: auto; margin-right: auto; }
-.tiles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px 22px; margin-top: 44px; }
+.tiles { display: grid; grid-template-columns: repeat(6, 1fr); gap: 28px 20px; margin-top: 44px; }
 .tile { margin: 0; }
-.tile img { width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; object-position: 50% 9%; border-radius: 22px; border: 1px solid var(--line);
+.tile img { width: 100%; height: auto; border-radius: 22px; border: 1px solid var(--line);
   box-shadow: var(--shadow); background: var(--paper); display: block; }
 .tile figcaption { margin-top: 10px; text-align: center; font-size: 14px; color: var(--muted); }
 
@@ -149,7 +149,9 @@ article.doc hr { border: 0; border-top: 1px solid var(--line); margin: 40px 0; }
   .visual .phone { width: min(260px, 72vw); }
   .visual .pair .phone { width: 46%; }
   .visual .pair .phone:last-child { margin-top: 32px; }
-  .tiles { grid-template-columns: repeat(3, 1fr); gap: 18px 12px; margin-top: 28px; }
+  .tiles { grid-template-columns: none; grid-auto-flow: column; grid-template-rows: auto auto; grid-auto-columns: 128px; gap: 16px 12px;
+    margin-top: 28px; overflow-x: auto; padding: 4px 0 8px; scroll-snap-type: x proximity; }
+  .tile { scroll-snap-align: start; }
   .tile img { border-radius: 16px; }
   .tile figcaption { font-size: 12px; margin-top: 6px; }
   .link-mark { width: 48px; height: 48px; }
@@ -159,7 +161,7 @@ article.doc hr { border: 0; border-top: 1px solid var(--line); margin: 40px 0; }
   .features p { font-size: 14.5px; }
   .final { padding: 56px 0 64px; }
 }
-@media (min-width: 821px) and (max-width: 1000px) { .more { grid-template-columns: repeat(2, 1fr); } .tiles { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 821px) and (max-width: 1000px) { .more { grid-template-columns: repeat(2, 1fr); } .tiles { grid-template-columns: repeat(4, 1fr); } }
 
 /* 스크린샷 라이트/다크 토글 — 스테이지 아래 가운데, 작은 세그먼트 */
 section.screens { padding: 8px 0 90px; }

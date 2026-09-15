@@ -14,31 +14,32 @@ Roost is a native Git client for iPhone and iPad. Clone, commit, push, branch, m
 ## Features
 
 **Git**
-- HTTPS tokens and SSH keys — GitHub and GitLab sign-in, personal access tokens, ed25519 and Secure Enclave keys, host-key fingerprint checks
-- Clone from your GitHub, GitLab, Bitbucket, or Gitea account; shallow clones
-- Branches, tags, and stashes; merge and rebase with a dedicated merge editor
-- History graph with branch rails, merges, and tag chips; commit details and per-file history
-- Unified and split diffs with syntax highlighting; image diffs
+- HTTPS tokens and SSH keys — Sign in with GitHub or GitLab, use a personal access token, or keep an SSH key in the Secure Enclave.
+- Clone from your accounts — Pick a repository from your GitHub, GitLab, Bitbucket, or Gitea account and clone it. Large repositories can be cloned shallowly.
+- Branches, tags, and stashes — Create and switch branches, push tags, and set work aside in a stash.
+- Merge, rebase, and conflicts — Resolve conflicts in a dedicated editor by choosing a side for each hunk or editing it yourself.
+- History graph — View branches, merges, and tags in the commit history, and follow the history of a single file.
+- Diffs — Read changes unified or side by side, and compare images before and after.
 
 **Viewing and editing**
-- Tree-sitter highlighting for 20+ languages, find in file, automatic reload on external changes
-- Markdown preview with tap-to-toggle task checkboxes
-- Search file names and contents; jump to function and type declarations
-- Files app integration — edit in any app, commit in Roost
-- Link an external folder (Logseq, for example) as a repository
+- Code viewer and editor — View and edit code with syntax highlighting for over 20 languages. Files changed outside the app reload automatically.
+- Markdown — Read Markdown rendered, and tick task checkboxes with a tap.
+- Search and symbols — Search file names and contents, and jump straight to function and type declarations.
+- Files app integration — Repositories appear as folders in the Files app. Edit files in compatible apps, then commit your changes in Roost.
+- Link an external folder — Connect another app's folder, such as a Logseq graph, as a repository and commit in place.
 
 **Game development files**
-- Aseprite: layers, tags, frame timeline, playback, pixel-perfect zoom
-- Images and textures: PNG, JPEG, HEIC, PSD, TGA, DDS, KTX2, EXR, SVG; per-channel view
-- 3D models: glTF, GLB, USDZ, FBX, OBJ with normals, base color, and UV modes
-- Audio and fonts: WAV and Ogg Vorbis waveforms with playback; font previews
-- Unity and Godot: prefab and scene structure, Unity GUID lookup; GLSL, HLSL, and GDScript highlighting
+- Aseprite — Preview Aseprite files with animation playback, layers, and tags.
+- Images and textures — Open textures such as PSD, TGA, DDS, KTX2, and EXR, and inspect them channel by channel.
+- 3D models — Turn glTF, USDZ, FBX, and OBJ models around, and check normals and UVs.
+- Audio and fonts — Play WAV and Ogg Vorbis files with a waveform view, and preview fonts.
+- Unity, Godot, and shaders — Read the structure of Unity prefabs and Godot scenes, and view GLSL, HLSL, and GDScript with highlighting.
 
 **Platform**
-- iPad: three-column layout, full keyboard shortcuts, multiple windows, Stage Manager
-- Shortcuts, Home Screen widgets, Live Activities, Spotlight
-- Four app palettes, four syntax themes, dark mode, Dynamic Type; English, Korean, Japanese
-- Privacy: no data collection, no analytics, no account
+- iPad — Work in three columns on iPad, with keyboard shortcuts, multiple windows, and Stage Manager.
+- Shortcuts, widgets, and Spotlight — Automate pull, push, and commit with Shortcuts, and see your repositories in widgets and Spotlight.
+- Themes and languages — Choose an app palette and a syntax theme, with dark mode and Dynamic Type. Available in English, Korean, and Japanese.
+- Privacy — No analytics or tracking. No separate Roost account required. Problem reports leave your device only when you send them.
 
 ## Beta
 
